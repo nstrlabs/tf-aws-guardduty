@@ -1,0 +1,10 @@
+---
+name: Misc
+
+on:
+  workflow_call:
+  pull_request_target:
+
+jobs:
+  pr_assign:
+    uses: nstrlabs/gh-actions-reusable-workflows/.github/workflows/auto_author_assign.yml@main

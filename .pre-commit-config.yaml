@@ -1,0 +1,28 @@
+default_stages: [commit, manual]
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+      - id: detect-private-key
+      - id: trailing-whitespace
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+  - repo: https://github.com/gruntwork-io/pre-commit
+    rev: v0.1.22 # Get the latest from: https://github.com/gruntwork-io/pre-commit/releases
+    hooks:
+      - id: terraform-fmt
+      - id: tflint
+      - id: shellcheck
+      - id: gofmt
+      - id: golint
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.92.0 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+    hooks:
+      - id: terraform_docs
+        args:
+          - --args=--config=.terraform-docs.yaml
+  - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
+    rev: v8.0.0
+    hooks:
+      - id: commitlint
+        stages: [commit-msg]
