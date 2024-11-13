@@ -1,3 +1,15 @@
+# 1.0.0 (2024-11-13)
+
+
+### Bug Fixes
+
+* semantic release config ([60234e6](https://github.com/nstrlabs/tf-aws-guardduty/commit/60234e6af969df36a37ecfe2b5d90a7f37f4b9d3))
+
+
+### Features
+
+* first commit ([e032fce](https://github.com/nstrlabs/tf-aws-guardduty/commit/e032fce07f799230d9e714062f2caa424a891244))
+
 # [1.2.0](https://github.com/nstrlabs/tf-modules-template/compare/v1.1.4...v1.2.0) (2024-09-23)
 
 
