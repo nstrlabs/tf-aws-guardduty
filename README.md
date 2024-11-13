@@ -1,4 +1,4 @@
-# tf-modules-template
+# tf-aws-guardduty
 Template for creating terraform modules
 
 ## Quick start
