@@ -1,9 +1,9 @@
 {
-  "name": "tf-modules-template",
+  "name": "tf-aws-guardduty",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com:nstrlabs/tf-modules-template.git"
+    "url": "git@github.com:nstrlabs/tf-aws-guardduty.git"
   },
   "dependencies": {
     "@semantic-release/changelog": "6.0.3",
