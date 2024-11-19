@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.0.0...v1.0.1) (2024-11-19)
+
+
+### Bug Fixes
+
+* package-lock ([d11f6b8](https://github.com/nstrlabs/tf-aws-guardduty/commit/d11f6b80d9991ec82586595190e363f4c65900c5))
+* readme ([2d4c25c](https://github.com/nstrlabs/tf-aws-guardduty/commit/2d4c25c8883b7a8bac3240bba419672559ab1556))
+
 # 1.0.0 (2024-11-13)
 
 
