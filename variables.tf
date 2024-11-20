@@ -26,15 +26,15 @@ variable "enable_kubernetes_protection" {
 }
 
 variable "enable_malware_protection" {
-  description = "Configure and enable Malware Protection as data source for EC2 instances with findings for the detector. Defaults to `true`."
-  type        = bool
-  default     = true
-}
-
-variable "enable_snapshot_retention" {
-  description = "Enable EBS Snaptshot retention for 30 days, if any Findings exists. Defaults to `false`."
+  description = "Configure and enable Malware Protection as data source for EC2 instances or EKS with findings for the detector. Defaults to `false`."
   type        = bool
   default     = false
+}
+
+variable "enable_rds_protection" {
+  description = "Configure and enable RDS protection analyzing login activity for potential access threats. Defaults to `true`."
+  type        = bool
+  default     = true
 }
 
 variable "finding_publishing_frequency" {
