@@ -20,9 +20,9 @@ variable "enable_s3_protection" {
 }
 
 variable "enable_kubernetes_protection" {
-  description = "Configure and enable Kubernetes audit logs as a data source for Kubernetes protection. Defaults to `true`."
+  description = "Configure and enable Kubernetes audit logs as a data source for Kubernetes protection. Defaults to `false`."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "enable_malware_protection" {
@@ -32,9 +32,9 @@ variable "enable_malware_protection" {
 }
 
 variable "enable_rds_protection" {
-  description = "Configure and enable RDS protection analyzing login activity for potential access threats. Defaults to `true`."
+  description = "Configure and enable RDS protection analyzing login activity for potential access threats. Defaults to `false`."
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "finding_publishing_frequency" {
