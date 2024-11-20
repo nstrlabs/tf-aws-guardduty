@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.1.1...v1.1.2) (2024-11-20)
+
+
+### Bug Fixes
+
+* disable additional configuration ([3df38e0](https://github.com/nstrlabs/tf-aws-guardduty/commit/3df38e0934734ab3eee102661be990d41c103771))
+
 ## [1.1.1](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.1.0...v1.1.1) (2024-11-20)
 
 
