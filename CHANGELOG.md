@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.0.1...v1.1.0) (2024-11-20)
+
+
+### Bug Fixes
+
+* variable description ([060f270](https://github.com/nstrlabs/tf-aws-guardduty/commit/060f270602ec0e5173dbf561b7b2ce992991ec36))
+
+
+### Features
+
+* new feature config ([a6bb546](https://github.com/nstrlabs/tf-aws-guardduty/commit/a6bb546c317e5d48c702638058325ab0d0fa3eee))
+
 ## [1.0.1](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.0.0...v1.0.1) (2024-11-19)
 
 
