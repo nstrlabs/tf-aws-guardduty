@@ -1,7 +1,7 @@
 locals {
-  snapshot_preservation = var.enable_snapshot_retention ? "'RETENTION_WITH_FINDING'" : "'NO_RETENTION'"
   tags = {
-    Repository = "https://github.com/aws-ia/terraform-aws-guardduty"
+    GitHubRepo = "tf-aws-guardduty"
+    GitHubOrg  = "nstrlabs"
   }
 }
 
@@ -11,36 +11,47 @@ locals {
 resource "aws_guardduty_detector" "primary" {
   #checkov:skip=CKV_AWS_238:Conditional argument for member accounts.
   #checkov:skip=CKV2_AWS_3:Org/Region will be defined by the Admin account.
-  enable = var.enable_guardduty
-
-  datasources {
-    s3_logs {
-      enable = var.enable_s3_protection
-    }
-    kubernetes {
-      audit_logs {
-        enable = var.enable_kubernetes_protection
-      }
-    }
-    malware_protection {
-      scan_ec2_instance_with_findings {
-        ebs_volumes {
-          enable = var.enable_malware_protection
-        }
-      }
-    }
-  }
-
+  enable                       = var.enable_guardduty
   finding_publishing_frequency = var.finding_publishing_frequency
+}
 
-  tags = merge(
-    local.tags,
-    var.tags
-  )
+resource "aws_guardduty_detector_feature" "s3_data_events" {
+  detector_id = aws_guardduty_detector.primary.id
+  name        = "S3_DATA_EVENTS"
+  status      = var.enable_s3_protection ? "ENABLED" : "DISABLED"
+}
 
-  provisioner "local-exec" {
-    command = "aws guardduty update-malware-scan-settings --detector-id ${self.id} --ebs-snapshot-preservation ${local.snapshot_preservation}"
+resource "aws_guardduty_detector_feature" "runtime_monitoring" {
+  detector_id = aws_guardduty_detector.primary.id
+  name        = "RUNTIME_MONITORING"
+  status      = var.enable_malware_protection ? "ENABLED" : "DISABLED"
+
+  additional_configuration {
+    name   = "EKS_ADDON_MANAGEMENT"
+    status = "ENABLED"
   }
+  additional_configuration {
+    name   = "EC2_AGENT_MANAGEMENT"
+    status = "ENABLED"
+  }
+}
+
+resource "aws_guardduty_detector_feature" "eks_audit_logs" {
+  detector_id = aws_guardduty_detector.primary.id
+  name        = "EKS_AUDIT_LOGS"
+  status      = var.enable_kubernetes_protection ? "ENABLED" : "DISABLED"
+}
+
+resource "aws_guardduty_detector_feature" "ebs_malware_protection" {
+  detector_id = aws_guardduty_detector.primary.id
+  name        = "EBS_MALWARE_PROTECTION"
+  status      = var.enable_malware_protection ? "ENABLED" : "DISABLED"
+}
+
+resource "aws_guardduty_detector_feature" "rds_login_events" {
+  detector_id = aws_guardduty_detector.primary.id
+  name        = "RDS_LOGIN_EVENTS"
+  status      = var.enable_rds_protection ? "ENABLED" : "DISABLED"
 }
 
 ##################################################

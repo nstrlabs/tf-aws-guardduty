@@ -31,10 +31,10 @@ variable "enable_malware_protection" {
   default     = true
 }
 
-variable "enable_snapshot_retention" {
-  description = "Enable EBS Snaptshot retention for 30 days, if any Findings exists. Defaults to `false`."
+variable "enable_rds_protection" {
+  description = "Configure and enable RDS protection analyzing login activity for potential access threatsDefaults to `false`."
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "finding_publishing_frequency" {
