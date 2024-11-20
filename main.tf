@@ -28,11 +28,11 @@ resource "aws_guardduty_detector_feature" "runtime_monitoring" {
 
   additional_configuration {
     name   = "EKS_ADDON_MANAGEMENT"
-    status = "ENABLED"
+    status = var.enable_malware_protection ? "ENABLED" : "DISABLED"
   }
   additional_configuration {
     name   = "EC2_AGENT_MANAGEMENT"
-    status = "ENABLED"
+    status = var.enable_malware_protection ? "ENABLED" : "DISABLED"
   }
 }
 
