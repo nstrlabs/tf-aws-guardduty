@@ -15,13 +15,13 @@ resource "aws_guardduty_organization_configuration" "this" {
 }
 
 resource "aws_guardduty_organization_configuration_feature" "s3_data_events" {
-  detector_id = aws_guardduty_detector.primary.id
+  detector_id = var.guardduty_detector_id
   name        = "S3_DATA_EVENTS"
   status      = var.enable_s3_protection ? "ENABLED" : "DISABLED"
 }
 
 resource "aws_guardduty_organization_configuration_feature" "runtime_monitoring" {
-  detector_id = aws_guardduty_detector.primary.id
+  detector_id = var.guardduty_detector_id
   name        = "RUNTIME_MONITORING"
   status      = var.enable_malware_protection ? "ENABLED" : "DISABLED"
 
@@ -36,19 +36,19 @@ resource "aws_guardduty_organization_configuration_feature" "runtime_monitoring"
 }
 
 resource "aws_guardduty_organization_configuration_feature" "eks_audit_logs" {
-  detector_id = aws_guardduty_detector.primary.id
+  detector_id = var.guardduty_detector_id
   name        = "EKS_AUDIT_LOGS"
   status      = var.enable_kubernetes_protection ? "ENABLED" : "DISABLED"
 }
 
 resource "aws_guardduty_organization_configuration_feature" "ebs_malware_protection" {
-  detector_id = aws_guardduty_detector.primary.id
+  detector_id = var.guardduty_detector_id
   name        = "EBS_MALWARE_PROTECTION"
   status      = var.enable_malware_protection ? "ENABLED" : "DISABLED"
 }
 
 resource "aws_guardduty_organization_configuration_feature" "rds_login_events" {
-  detector_id = aws_guardduty_detector.primary.id
+  detector_id = var.guardduty_detector_id
   name        = "RDS_LOGIN_EVENTS"
   status      = var.enable_rds_protection ? "ENABLED" : "DISABLED"
 }
