@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.2.0...v1.2.1) (2024-11-22)
+
+
+### Bug Fixes
+
+* reference to undeclared resource ([4470e54](https://github.com/nstrlabs/tf-aws-guardduty/commit/4470e547f655ba3427107371aca51fb49b996234))
+
 # [1.2.0](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.1.2...v1.2.0) (2024-11-22)
 
 
