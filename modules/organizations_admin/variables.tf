@@ -39,5 +39,5 @@ variable "admin_account_id" {
 variable "auto_enable_organization_members" {
   description = "Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. Valid values are `ALL`, `NEW`, `NONE`. Defaults to `NEW`."
   type        = string
-  default     = "ALL"
+  default     = "NEW"
 }
