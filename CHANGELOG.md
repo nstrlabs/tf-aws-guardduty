@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.2.1...v1.2.2) (2024-11-22)
+
+
+### Bug Fixes
+
+* resources definition ([fe29d02](https://github.com/nstrlabs/tf-aws-guardduty/commit/fe29d0250860c3031adef8146875da3b678feedc))
+
 ## [1.2.1](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.2.0...v1.2.1) (2024-11-22)
 
 
