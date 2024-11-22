@@ -9,46 +9,45 @@ resource "aws_guardduty_organization_admin_account" "this" {
 resource "aws_guardduty_organization_configuration" "this" {
   count = var.admin_account_id == null ? 0 : 1
 
-  auto_enable                      = var.auto_enable_organization_members != null ? null : var.auto_enable_org_config
-  auto_enable_organization_members = var.auto_enable_org_config != null ? null : var.auto_enable_organization_members
+  auto_enable_organization_members = var.auto_enable_organization_members
   detector_id                      = var.guardduty_detector_id
 }
 
 resource "aws_guardduty_organization_configuration_feature" "s3_data_events" {
   detector_id = var.guardduty_detector_id
   name        = "S3_DATA_EVENTS"
-  status      = var.enable_s3_protection ? "ENABLED" : "DISABLED"
+  auto_enable = var.enable_s3_protection ? "ALL" : "NONE"
 }
 
 resource "aws_guardduty_organization_configuration_feature" "runtime_monitoring" {
   detector_id = var.guardduty_detector_id
   name        = "RUNTIME_MONITORING"
-  status      = var.enable_malware_protection ? "ENABLED" : "DISABLED"
+  auto_enable = var.enable_malware_protection ? "ALL" : "NONE"
 
   additional_configuration {
-    name   = "EKS_ADDON_MANAGEMENT"
-    status = var.enable_malware_protection ? "ENABLED" : "DISABLED"
+    name        = "EKS_ADDON_MANAGEMENT"
+    auto_enable = var.enable_malware_protection ? "ALL" : "NONE"
   }
   additional_configuration {
-    name   = "EC2_AGENT_MANAGEMENT"
-    status = var.enable_malware_protection ? "ENABLED" : "DISABLED"
+    name        = "EC2_AGENT_MANAGEMENT"
+    auto_enable = var.enable_malware_protection ? "ALL" : "NONE"
   }
 }
 
 resource "aws_guardduty_organization_configuration_feature" "eks_audit_logs" {
   detector_id = var.guardduty_detector_id
   name        = "EKS_AUDIT_LOGS"
-  status      = var.enable_kubernetes_protection ? "ENABLED" : "DISABLED"
+  auto_enable = var.enable_kubernetes_protection ? "ALL" : "NONE"
 }
 
 resource "aws_guardduty_organization_configuration_feature" "ebs_malware_protection" {
   detector_id = var.guardduty_detector_id
   name        = "EBS_MALWARE_PROTECTION"
-  status      = var.enable_malware_protection ? "ENABLED" : "DISABLED"
+  auto_enable = var.enable_malware_protection ? "ALL" : "NONE"
 }
 
 resource "aws_guardduty_organization_configuration_feature" "rds_login_events" {
   detector_id = var.guardduty_detector_id
   name        = "RDS_LOGIN_EVENTS"
-  status      = var.enable_rds_protection ? "ENABLED" : "DISABLED"
+  auto_enable = var.enable_rds_protection ? "ALL" : "NONE"
 }

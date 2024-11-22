@@ -77,8 +77,7 @@ No modules.
 
 | Name | Description | Type |
 |------|-------------|------|
-| <a name="input_admin_account_id"></a> [admin_account_id](#input_admin_account_id) | AWS Organizations Admin Account Id. Defaults to `null` | `string` |
-| <a name="input_auto_enable_org_config"></a> [auto_enable_org_config](#input_auto_enable_org_config) | When this setting is enabled, all new accounts that are created in, or added to, the organization are added as a member accounts of the organization’s GuardDuty delegated administrator and GuardDuty is enabled in that AWS Region. | `bool` |
+| <a name="input_admin_account_id"></a> [admin_account_id](#input_admin_account_id) | AWS account identifier to designate as a delegated administrator for GuardDuty. Defaults to `null` | `string` |
 | <a name="input_auto_enable_organization_members"></a> [auto_enable_organization_members](#input_auto_enable_organization_members) | Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. Valid values are `ALL`, `NEW`, `NONE`. Defaults to `NEW`. | `string` |
 | <a name="input_enable_kubernetes_protection"></a> [enable_kubernetes_protection](#input_enable_kubernetes_protection) | Configure and enable Kubernetes audit logs as a data source for Kubernetes protection. Defaults to `false`. | `bool` |
 | <a name="input_enable_malware_protection"></a> [enable_malware_protection](#input_enable_malware_protection) | Configure and enable Malware Protection as data source for EC2 instances or EKS with findings for the detector. Defaults to `false`. | `bool` |

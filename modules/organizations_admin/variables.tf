@@ -31,19 +31,13 @@ variable "enable_rds_protection" {
 }
 
 variable "admin_account_id" {
-  description = "AWS Organizations Admin Account Id. Defaults to `null`"
+  description = "AWS account identifier to designate as a delegated administrator for GuardDuty. Defaults to `null`"
   type        = string
-  default     = null
-}
-
-variable "auto_enable_org_config" {
-  description = "When this setting is enabled, all new accounts that are created in, or added to, the organization are added as a member accounts of the organization’s GuardDuty delegated administrator and GuardDuty is enabled in that AWS Region."
-  type        = bool
   default     = null
 }
 
 variable "auto_enable_organization_members" {
   description = "Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. Valid values are `ALL`, `NEW`, `NONE`. Defaults to `NEW`."
   type        = string
-  default     = "NEW"
+  default     = "ALL"
 }
