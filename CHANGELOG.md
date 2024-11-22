@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.2.2...v1.2.3) (2024-11-22)
+
+
+### Bug Fixes
+
+* invalid or out-of-range value ([9763c5e](https://github.com/nstrlabs/tf-aws-guardduty/commit/9763c5ec023c600da38d3824d87ede4d49f84acc))
+
 ## [1.2.2](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.2.1...v1.2.2) (2024-11-22)
 
 
