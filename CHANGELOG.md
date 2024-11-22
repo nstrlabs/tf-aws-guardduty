@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.1.2...v1.2.0) (2024-11-22)
+
+
+### Features
+
+* upgrade deprecated resources ([483ed6a](https://github.com/nstrlabs/tf-aws-guardduty/commit/483ed6ac821375124af8bcbb6523c5e92f4368a4))
+
 ## [1.1.2](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.1.1...v1.1.2) (2024-11-20)
 
 
