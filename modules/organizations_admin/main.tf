@@ -19,12 +19,14 @@ resource "aws_guardduty_organization_configuration" "this" {
 }
 
 resource "aws_guardduty_organization_configuration_feature" "s3_data_events" {
+  count       = var.admin_account_id == null ? 0 : 1
   detector_id = var.guardduty_detector_id
   name        = "S3_DATA_EVENTS"
   auto_enable = var.enable_s3_protection ? "ALL" : "NONE"
 }
 
 resource "aws_guardduty_organization_configuration_feature" "runtime_monitoring" {
+  count       = var.admin_account_id == null ? 0 : 1
   detector_id = var.guardduty_detector_id
   name        = "RUNTIME_MONITORING"
   auto_enable = var.enable_malware_protection ? "ALL" : "NONE"
@@ -40,18 +42,21 @@ resource "aws_guardduty_organization_configuration_feature" "runtime_monitoring"
 }
 
 resource "aws_guardduty_organization_configuration_feature" "eks_audit_logs" {
+  count       = var.admin_account_id == null ? 0 : 1
   detector_id = var.guardduty_detector_id
   name        = "EKS_AUDIT_LOGS"
   auto_enable = var.enable_kubernetes_protection ? "ALL" : "NONE"
 }
 
 resource "aws_guardduty_organization_configuration_feature" "ebs_malware_protection" {
+  count       = var.admin_account_id == null ? 0 : 1
   detector_id = var.guardduty_detector_id
   name        = "EBS_MALWARE_PROTECTION"
   auto_enable = var.enable_malware_protection ? "ALL" : "NONE"
 }
 
 resource "aws_guardduty_organization_configuration_feature" "rds_login_events" {
+  count       = var.admin_account_id == null ? 0 : 1
   detector_id = var.guardduty_detector_id
   name        = "RDS_LOGIN_EVENTS"
   auto_enable = var.enable_rds_protection ? "ALL" : "NONE"
