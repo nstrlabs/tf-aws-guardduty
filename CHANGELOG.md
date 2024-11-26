@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.3.0...v1.3.1) (2024-11-26)
+
+
+### Bug Fixes
+
+* set aws provider version ([17e7b0f](https://github.com/nstrlabs/tf-aws-guardduty/commit/17e7b0f216921137001d10fc142bb43e2457ab8e))
+
 # [1.3.0](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.2.3...v1.3.0) (2024-11-26)
 
 
