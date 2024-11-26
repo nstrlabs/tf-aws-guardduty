@@ -24,12 +24,6 @@ variable "enable_malware_protection" {
   default     = false
 }
 
-variable "enable_rds_protection" {
-  description = "Configure and enable RDS protection analyzing login activity for potential access threats. Defaults to `false`."
-  type        = bool
-  default     = false
-}
-
 variable "admin_account_id" {
   description = "AWS account identifier to designate as a delegated administrator for GuardDuty. Defaults to `null`"
   type        = string
