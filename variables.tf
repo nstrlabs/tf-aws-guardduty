@@ -20,19 +20,55 @@ variable "enable_s3_protection" {
 }
 
 variable "enable_kubernetes_protection" {
-  description = "Configure and enable Kubernetes audit logs as a data source for Kubernetes protection. Defaults to `false`."
+  description = "Configure and enable Kubernetes audit logs as a data source for Kubernetes protection. Defaults to `true`."
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "enable_malware_protection" {
-  description = "Configure and enable Malware Protection as data source for EC2 instances or EKS with findings for the detector. Defaults to `false`."
+  description = "Configure and enable Malware Protection as data source for EC2 instances with findings for the detector. Defaults to `true`."
+  type        = bool
+  default     = true
+}
+
+variable "enable_rds_login_events" {
+  description = "Configure and enable RDS Login Events Monitoring. Defaults to `false`."
   type        = bool
   default     = false
 }
 
-variable "enable_rds_protection" {
-  description = "Configure and enable RDS protection analyzing login activity for potential access threats. Defaults to `false`."
+variable "enable_lambda_network_logs" {
+  description = "Configure and enable Lambda Newtork Logs Monitoring. Defaults to `false`."
+  type        = bool
+  default     = false
+}
+
+variable "enable_eks_runtime_monitoring" {
+  description = "Configure and enable EKS Runtime Montoring. Specifying both EKS Runtime Monitoring and Runtime Monitoring will cause an error. Defaults to `false`."
+  type        = bool
+  default     = false
+}
+
+variable "enable_runtime_monitoring" {
+  description = "Configure and enable Runtime Monitoring. Specifying both EKS Runtime Monitoring and Runtime Monitoring  will cause an error. Defaults to `false`."
+  type        = bool
+  default     = false
+}
+
+variable "enable_eks_addon_management" {
+  description = "Configure and enable EKS Addon Mangement  additional configuration of EKS Runtime Monitoring/Runtime Monitoring. Defaults to `false`."
+  type        = bool
+  default     = false
+}
+
+variable "enable_ecs_fargate_agent_management" {
+  description = "Configure and enable ECS Fargate Agent Management additional configuration of Runtime Monitoring. Defaults to `false`."
+  type        = bool
+  default     = false
+}
+
+variable "enable_ec2_agent_management" {
+  description = "Configure and enable EC2 Agent Management additional configuration of Runtime Monitoring. Defaults to `false`."
   type        = bool
   default     = false
 }
@@ -42,7 +78,6 @@ variable "finding_publishing_frequency" {
   type        = string
   default     = "FIFTEEN_MINUTES"
 }
-
 
 ##################################################
 # GuardDuty Filter
