@@ -1,4 +1,17 @@
 locals {
+  configuration_features = {
+    "LAMBDA_NETWORK_LOGS" = { auto_enable = var.enable_lambda_network_logs }
+    "RDS_LOGIN_EVENTS"    = { enabled = var.enable_rds_login_events }
+    "EKS_RUNTIME_MONITORING" = { enabled = var.enable_eks_runtime_monitoring
+      additional_configuration = {
+    "EKS_ADDON_MANAGEMENT" = { enabled = var.enable_eks_addon_management } } }
+    "RUNTIME_MONITORING" = { enabled = var.enable_runtime_monitoring
+      additional_configuration = {
+        "EKS_ADDON_MANAGEMENT" = { enabled = var.enable_eks_addon_management }
+        "EC2_AGENT_MANAGEMENT" = { enabled = var.enable_ec2_agent_management }
+    "ECS_FARGATE_AGENT_MANAGEMENT" = { enabled = var.enable_ecs_fargate_agent_management } } }
+  }
+
   tags = {
     GitHubRepo = "tf-aws-guardduty"
     GitHubOrg  = "nstrlabs"
@@ -11,47 +24,43 @@ locals {
 resource "aws_guardduty_detector" "primary" {
   #checkov:skip=CKV_AWS_238:Conditional argument for member accounts.
   #checkov:skip=CKV2_AWS_3:Org/Region will be defined by the Admin account.
-  enable                       = var.enable_guardduty
+  enable = var.enable_guardduty
+  datasources {
+    s3_logs {
+      enable = var.enable_s3_protection
+    }
+    kubernetes {
+      audit_logs {
+        enable = var.enable_kubernetes_protection
+      }
+    }
+    malware_protection {
+      scan_ec2_instance_with_findings {
+        ebs_volumes {
+          enable = var.enable_malware_protection
+        }
+      }
+    }
+  }
   finding_publishing_frequency = var.finding_publishing_frequency
 }
 
-resource "aws_guardduty_detector_feature" "s3_data_events" {
+##################################################
+# GuardDuty Features Configuration
+##################################################
+resource "aws_guardduty_detector_feature" "this" {
+  for_each    = { for k, v in local.configuration_features : k => v if v.enabled }
   detector_id = aws_guardduty_detector.primary.id
-  name        = "S3_DATA_EVENTS"
-  status      = var.enable_s3_protection ? "ENABLED" : "DISABLED"
-}
+  name        = each.key
+  status      = each.value.enabled ? "ENABLED" : "DISABLED"
 
-resource "aws_guardduty_detector_feature" "runtime_monitoring" {
-  detector_id = aws_guardduty_detector.primary.id
-  name        = "RUNTIME_MONITORING"
-  status      = var.enable_malware_protection ? "ENABLED" : "DISABLED"
-
-  additional_configuration {
-    name   = "EKS_ADDON_MANAGEMENT"
-    status = var.enable_malware_protection ? "ENABLED" : "DISABLED"
+  dynamic "additional_configuration" {
+    for_each = { for k, v in each.value.additional_configuration : k => v if v.enabled }
+    content {
+      name   = each.key
+      status = each.value.enabled ? "ENABLED" : "DISABLED"
+    }
   }
-  additional_configuration {
-    name   = "EC2_AGENT_MANAGEMENT"
-    status = var.enable_malware_protection ? "ENABLED" : "DISABLED"
-  }
-}
-
-resource "aws_guardduty_detector_feature" "eks_audit_logs" {
-  detector_id = aws_guardduty_detector.primary.id
-  name        = "EKS_AUDIT_LOGS"
-  status      = var.enable_kubernetes_protection ? "ENABLED" : "DISABLED"
-}
-
-resource "aws_guardduty_detector_feature" "ebs_malware_protection" {
-  detector_id = aws_guardduty_detector.primary.id
-  name        = "EBS_MALWARE_PROTECTION"
-  status      = var.enable_malware_protection ? "ENABLED" : "DISABLED"
-}
-
-resource "aws_guardduty_detector_feature" "rds_login_events" {
-  detector_id = aws_guardduty_detector.primary.id
-  name        = "RDS_LOGIN_EVENTS"
-  status      = var.enable_rds_protection ? "ENABLED" : "DISABLED"
 }
 
 ##################################################
