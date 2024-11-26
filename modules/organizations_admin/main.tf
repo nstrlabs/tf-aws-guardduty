@@ -1,11 +1,6 @@
 ##################################################
 # GuardDuty Organizations Delegated Admin
 ##################################################
-resource "aws_organizations_organization" "this" {
-  aws_service_access_principals = ["guardduty.amazonaws.com"]
-  feature_set                   = "ALL"
-}
-
 resource "aws_guardduty_organization_admin_account" "this" {
   count            = var.admin_account_id == null ? 0 : 1
   admin_account_id = var.admin_account_id
