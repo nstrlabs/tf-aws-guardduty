@@ -10,15 +10,15 @@ Check https://nwdlabs.atlassian.net/wiki/spaces/INF/pages/539787266/Create+terra
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | >= 1.0.0 |
-| <a name="requirement_aws"></a> [aws](#requirement_aws) | >= 4.47 |
+| <a name="requirement_aws"></a> [aws](#requirement_aws) | ~> 5.0 |
 | <a name="requirement_random"></a> [random](#requirement_random) | >= 3.4 |
 
 #### Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider_aws) | >= 4.47 |
-| <a name="provider_aws.replica"></a> [aws.replica](#provider_aws.replica) | >= 4.47 |
+| <a name="provider_aws"></a> [aws](#provider_aws) | ~> 5.0 |
+| <a name="provider_aws.replica"></a> [aws.replica](#provider_aws.replica) | ~> 5.0 |
 | <a name="provider_random"></a> [random](#provider_random) | >= 3.4 |
 
 #### Modules
