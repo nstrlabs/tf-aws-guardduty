@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.3.1...v1.3.2) (2024-11-26)
+
+
+### Bug Fixes
+
+* admin delegated ([7fc6226](https://github.com/nstrlabs/tf-aws-guardduty/commit/7fc62266970c4d27ae2bc6412564c708a364d130))
+
 ## [1.3.1](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.3.0...v1.3.1) (2024-11-26)
 
 
