@@ -67,11 +67,6 @@ No modules.
 |------|------|
 | [aws_guardduty_organization_admin_account.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/guardduty_organization_admin_account) | resource |
 | [aws_guardduty_organization_configuration.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/guardduty_organization_configuration) | resource |
-| [aws_guardduty_organization_configuration_feature.ebs_malware_protection](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/guardduty_organization_configuration_feature) | resource |
-| [aws_guardduty_organization_configuration_feature.eks_audit_logs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/guardduty_organization_configuration_feature) | resource |
-| [aws_guardduty_organization_configuration_feature.rds_login_events](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/guardduty_organization_configuration_feature) | resource |
-| [aws_guardduty_organization_configuration_feature.runtime_monitoring](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/guardduty_organization_configuration_feature) | resource |
-| [aws_guardduty_organization_configuration_feature.s3_data_events](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/guardduty_organization_configuration_feature) | resource |
 
 #### Inputs
 
@@ -81,7 +76,6 @@ No modules.
 | <a name="input_auto_enable_organization_members"></a> [auto_enable_organization_members](#input_auto_enable_organization_members) | Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. Valid values are `ALL`, `NEW`, `NONE`. Defaults to `NEW`. | `string` |
 | <a name="input_enable_kubernetes_protection"></a> [enable_kubernetes_protection](#input_enable_kubernetes_protection) | Configure and enable Kubernetes audit logs as a data source for Kubernetes protection. Defaults to `false`. | `bool` |
 | <a name="input_enable_malware_protection"></a> [enable_malware_protection](#input_enable_malware_protection) | Configure and enable Malware Protection as data source for EC2 instances or EKS with findings for the detector. Defaults to `false`. | `bool` |
-| <a name="input_enable_rds_protection"></a> [enable_rds_protection](#input_enable_rds_protection) | Configure and enable RDS protection analyzing login activity for potential access threats. Defaults to `false`. | `bool` |
 | <a name="input_enable_s3_protection"></a> [enable_s3_protection](#input_enable_s3_protection) | Configure and enable S3 protection. Defaults to `true`. | `bool` |
 | <a name="input_guardduty_detector_id"></a> [guardduty_detector_id](#input_guardduty_detector_id) | The detector ID of the GuardDuty account. | `string` |
 
