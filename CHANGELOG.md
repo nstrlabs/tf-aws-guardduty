@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.2.3...v1.3.0) (2024-11-26)
+
+
+### Features
+
+* remove org configuration ([d789228](https://github.com/nstrlabs/tf-aws-guardduty/commit/d789228200ca1e5a320f2ed63523291a1941ff93))
+* remove organization config ([228807d](https://github.com/nstrlabs/tf-aws-guardduty/commit/228807d42143d5aa62e9a01f4bdf6944bec0fc38))
+
 ## [1.2.3](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.2.2...v1.2.3) (2024-11-22)
 
 
