@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.4.0...v1.4.1) (2024-11-27)
+
+
+### Bug Fixes
+
+* error in nested variable ([4c4a9f5](https://github.com/nstrlabs/tf-aws-guardduty/commit/4c4a9f5f39c98f4854fa9b7b17b56fb5c96dc2cb))
+
 # [1.4.0](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.3.2...v1.4.0) (2024-11-26)
 
 
