@@ -1,6 +1,6 @@
 locals {
   configuration_features = {
-    "LAMBDA_NETWORK_LOGS" = { auto_enable = var.enable_lambda_network_logs }
+    "LAMBDA_NETWORK_LOGS" = { enabled = var.enable_lambda_network_logs }
     "RDS_LOGIN_EVENTS"    = { enabled = var.enable_rds_login_events }
     "EKS_RUNTIME_MONITORING" = { enabled = var.enable_eks_runtime_monitoring
       additional_configuration = {
