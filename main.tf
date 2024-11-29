@@ -449,12 +449,13 @@ resource "aws_cloudwatch_event_target" "slack" {
   input_transformer {
     input_paths = {
       title       = "$.detail.title"
+      account     = "$.detail.accountId"
       description = "$.detail.description"
       eventTime   = "$.detail.service.eventFirstSeen"
       region      = "$.detail.region"
     }
 
-    input_template = "\"GuardDuty finding in <region> first seen at <eventTime>: <title> <description>\""
+    input_template = "\"GuardDuty finding for <account> in <region> first seen at <eventTime>: <title> <description>\""
   }
 }
 
