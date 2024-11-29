@@ -4,10 +4,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 4.47"
-      configuration_aliases = [
-        aws.member,
-      ]
+      version = "~> 5.0"
     }
 
     random = {

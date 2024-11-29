@@ -207,13 +207,13 @@ variable "pagerduty_notifications" {
 variable "slack_notifications" {
   description = "Enable Slack notifications for GuardDuty findings"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "email_notifications" {
   description = "Enable Email notifications for GuardDuty findings"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "sns_topic_slack_arn" {
