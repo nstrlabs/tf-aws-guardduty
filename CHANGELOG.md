@@ -1,3 +1,10 @@
+## [1.7.4](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.7.3...v1.7.4) (2024-11-29)
+
+
+### Bug Fixes
+
+* leading 0 account number ([2ec61a6](https://github.com/nstrlabs/tf-aws-guardduty/commit/2ec61a6ec664a4571eefa9a75e0c68344da66e08))
+
 ## [1.7.3](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.7.2...v1.7.3) (2024-11-29)
 
 
