@@ -1,3 +1,11 @@
+## [1.7.5](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.7.4...v1.7.5) (2024-11-29)
+
+
+### Bug Fixes
+
+* account in slack message ([27a28aa](https://github.com/nstrlabs/tf-aws-guardduty/commit/27a28aac1236f1add222c1f7dc1879d953000f90))
+* tabs ([5e50247](https://github.com/nstrlabs/tf-aws-guardduty/commit/5e502478ac9a53d97da387390bafcdc832af71a4))
+
 ## [1.7.4](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.7.3...v1.7.4) (2024-11-29)
 
 
