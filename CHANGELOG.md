@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.7.0...v1.7.1) (2024-11-29)
+
+
+### Bug Fixes
+
+* missing resource ([318a439](https://github.com/nstrlabs/tf-aws-guardduty/commit/318a439fb96ffb9b37031fcc16c62bad9b702a57))
+
 # [1.7.0](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.6.0...v1.7.0) (2024-11-29)
 
 
