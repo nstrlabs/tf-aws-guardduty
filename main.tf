@@ -427,6 +427,7 @@ module "log_bucket" {
 # CloudWatch Event
 ##################################################
 resource "aws_cloudwatch_event_rule" "main" {
+  count         = var.slack_notifications || var.email_notifications || var.pagerduty_notifications ? 1 : 0
   name          = "OnumGuarddutyFindingEvents"
   description   = "AWS GuardDuty event findings"
   event_pattern = file("${path.module}/event-pattern.json")
