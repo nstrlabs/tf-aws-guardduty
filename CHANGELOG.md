@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.4.1...v1.4.2) (2024-11-29)
+
+
+### Bug Fixes
+
+* delegated admin flow ([de4edfa](https://github.com/nstrlabs/tf-aws-guardduty/commit/de4edfab732d931987577ade8953289eec42df3b))
+
 ## [1.4.1](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.4.0...v1.4.1) (2024-11-27)
 
 
