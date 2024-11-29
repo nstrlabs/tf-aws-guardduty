@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.4.2...v1.4.3) (2024-11-29)
+
+
+### Bug Fixes
+
+* remove admin account config ([2651956](https://github.com/nstrlabs/tf-aws-guardduty/commit/2651956d05df863a5ff68fa7b05824ec238effe1))
+
 ## [1.4.2](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.4.1...v1.4.2) (2024-11-29)
 
 
