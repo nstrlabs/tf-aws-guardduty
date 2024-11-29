@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.5.0...v1.6.0) (2024-11-29)
+
+
+### Features
+
+* member config ([df3d064](https://github.com/nstrlabs/tf-aws-guardduty/commit/df3d064ea3f189fa8045579dc963699ead4c187d))
+
 # [1.5.0](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.4.3...v1.5.0) (2024-11-29)
 
 
