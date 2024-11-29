@@ -65,7 +65,6 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_guardduty_organization_admin_account.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/guardduty_organization_admin_account) | resource |
 | [aws_guardduty_organization_configuration.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/guardduty_organization_configuration) | resource |
 | [aws_guardduty_organization_configuration_feature.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/guardduty_organization_configuration_feature) | resource |
 
@@ -73,7 +72,6 @@ No modules.
 
 | Name | Description | Type |
 |------|-------------|------|
-| <a name="input_admin_account_id"></a> [admin_account_id](#input_admin_account_id) | AWS Organizations Admin Account Id. Defaults to `null` | `string` |
 | <a name="input_auto_enable_ec2_agent_management"></a> [auto_enable_ec2_agent_management](#input_auto_enable_ec2_agent_management) | Auto-enable EC2 Agent Management additional configuration of Runtime Monitoring for the member accounts within the organization. | `string` |
 | <a name="input_auto_enable_ecs_fargate_agent_management"></a> [auto_enable_ecs_fargate_agent_management](#input_auto_enable_ecs_fargate_agent_management) | Auto-enable ECS Fargate Agent Management  additional configuration of Runtime Monitoring for the member accounts within the organization. | `string` |
 | <a name="input_auto_enable_eks_addon_management"></a> [auto_enable_eks_addon_management](#input_auto_enable_eks_addon_management) | Auto-enable EKS Addon Management additional configuration of EKS Runtime Monitoring/Runtime Monitoring for the member accounts within the organization. | `string` |

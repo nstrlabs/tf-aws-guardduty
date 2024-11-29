@@ -17,11 +17,6 @@ locals {
   }
 }
 
-resource "aws_guardduty_organization_admin_account" "this" {
-  count            = var.admin_account_id == null ? 0 : 1
-  admin_account_id = var.admin_account_id
-}
-
 resource "aws_guardduty_organization_configuration" "this" {
   count = var.admin_account_id == null ? 0 : 1
 
