@@ -1,3 +1,11 @@
+# [1.5.0](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.4.3...v1.5.0) (2024-11-29)
+
+
+### Features
+
+* condition ([88c450c](https://github.com/nstrlabs/tf-aws-guardduty/commit/88c450cbbcea45875b48694f103957250955a28d))
+* guardduty notifications ([bb8a245](https://github.com/nstrlabs/tf-aws-guardduty/commit/bb8a245f8ea6943046aed535a0db6f225bbb2606))
+
 ## [1.4.3](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.4.2...v1.4.3) (2024-11-29)
 
 
