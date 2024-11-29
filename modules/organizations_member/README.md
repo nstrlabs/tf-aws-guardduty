@@ -80,7 +80,5 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_guardduty_invite_accepter"></a> [guardduty_invite_accepter](#output_guardduty_invite_accepter) | AWS GuardDuty Detector invite. |
-| <a name="output_guardduty_member_configuration"></a> [guardduty_member_configuration](#output_guardduty_member_configuration) | AWS GuardDuty member configuration. |
-| <a name="output_guardduty_member_detector"></a> [guardduty_member_detector](#output_guardduty_member_detector) | AWS GuardDuty member detector. |
 
 [//]: # (END_TF_DOCS)
