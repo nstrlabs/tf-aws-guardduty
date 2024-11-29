@@ -219,23 +219,23 @@ variable "email_notifications" {
 variable "sns_topic_slack_arn" {
   description = "Slack SNS Topic ARN"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "sns_topic_pagerduty_arn" {
   description = "PagerDuty SNS Topic ARN"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "sns_topic_email_arn" {
   description = "Email SNS Topic ARN"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "sns_topic_email_endpoint" {
   description = "Email SNS Topic endpoint"
   type        = string
-  default     = ""
+  default     = null
 }

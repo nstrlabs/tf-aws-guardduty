@@ -438,7 +438,7 @@ resource "aws_cloudwatch_event_rule" "main" {
 resource "aws_cloudwatch_event_target" "slack" {
   count = var.slack_notifications ? 1 : 0
 
-  rule      = aws_cloudwatch_event_rule.main.name
+  rule      = aws_cloudwatch_event_rule.main[0].name
   target_id = "send-to-sns-slack"
   arn       = var.sns_topic_slack_arn
 
@@ -457,7 +457,7 @@ resource "aws_cloudwatch_event_target" "slack" {
 resource "aws_cloudwatch_event_target" "pagerduty" {
   count = var.pagerduty_notifications ? 1 : 0
 
-  rule      = aws_cloudwatch_event_rule.main.name
+  rule      = aws_cloudwatch_event_rule.main[0].name
   target_id = "send-to-sns-pagerduty"
   arn       = var.sns_topic_pagerduty_arn
 }
@@ -465,7 +465,7 @@ resource "aws_cloudwatch_event_target" "pagerduty" {
 resource "aws_cloudwatch_event_target" "email" {
   count = var.email_notifications ? 1 : 0
 
-  rule      = aws_cloudwatch_event_rule.main.name
+  rule      = aws_cloudwatch_event_rule.main[0].name
   target_id = "send-to-sns-email"
   arn       = var.sns_topic_email_arn
 
