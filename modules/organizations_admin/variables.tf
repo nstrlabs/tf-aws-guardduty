@@ -94,12 +94,6 @@ variable "auto_enable_ec2_agent_management" {
   }
 }
 
-variable "admin_account_id" {
-  description = "AWS Organizations Admin Account Id. Defaults to `null`"
-  type        = string
-  default     = null
-}
-
 variable "auto_enable_org_config" {
   description = "When this setting is enabled, all new accounts that are created in, or added to, the organization are added as a member accounts of the organization’s GuardDuty delegated administrator and GuardDuty is enabled in that AWS Region."
   type        = bool
