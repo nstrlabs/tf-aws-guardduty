@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.7.2...v1.7.3) (2024-11-29)
+
+
+### Bug Fixes
+
+* output ([9da0f3a](https://github.com/nstrlabs/tf-aws-guardduty/commit/9da0f3a375d82cb331d54ee539c90968e6615398))
+
 ## [1.7.2](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.7.1...v1.7.2) (2024-11-29)
 
 
