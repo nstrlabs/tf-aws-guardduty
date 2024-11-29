@@ -119,7 +119,7 @@ variable "member_config" {
   `disable_email_notification` - Whether an email notification is sent to the accounts. Defaults to `false`.
   EOF
   type = list(object({
-    account_id                 = number
+    account_id                 = string
     email                      = string
     invite                     = bool
     invitation_message         = optional(string)
