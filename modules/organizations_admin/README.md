@@ -90,7 +90,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_guardduty_delegated_admin_account"></a> [guardduty_delegated_admin_account](#output_guardduty_delegated_admin_account) | AWS GuardDuty Delegated Admin account. |
 | <a name="output_guardduty_organization_configuration"></a> [guardduty_organization_configuration](#output_guardduty_organization_configuration) | AWS GuardDuty Organizations configuration. |
 
 [//]: # (END_TF_DOCS)

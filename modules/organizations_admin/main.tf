@@ -18,8 +18,6 @@ locals {
 }
 
 resource "aws_guardduty_organization_configuration" "this" {
-  count = var.admin_account_id == null ? 0 : 1
-
   auto_enable                      = var.auto_enable_organization_members != null ? null : var.auto_enable_org_config
   auto_enable_organization_members = var.auto_enable_org_config != null ? null : var.auto_enable_organization_members
   detector_id                      = var.guardduty_detector_id
