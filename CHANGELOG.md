@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.7.1...v1.7.2) (2024-11-29)
+
+
+### Bug Fixes
+
+* remove useless for_each ([e3a21c9](https://github.com/nstrlabs/tf-aws-guardduty/commit/e3a21c91e96c7447697d7a9c650698827db8cb97))
+
 ## [1.7.1](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.7.0...v1.7.1) (2024-11-29)
 
 
