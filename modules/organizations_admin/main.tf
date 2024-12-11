@@ -55,7 +55,7 @@ resource "aws_guardduty_organization_configuration_feature" "this" {
   auto_enable = each.value.auto_enable
 
   dynamic "additional_configuration" {
-    for_each = { for k, v in each.value.additional_configuration : k => v if v.auto_enable != null }
+    for_each = { for k, v in lookup(each.value, "additional_configuration", {}) : k => v if v.auto_enable != null }
     content {
       name        = additional_configuration.key
       auto_enable = additional_configuration.value.auto_enable
