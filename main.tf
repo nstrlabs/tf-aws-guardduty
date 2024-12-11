@@ -59,7 +59,7 @@ resource "aws_guardduty_detector_feature" "this" {
   status      = each.value.enabled ? "ENABLED" : "DISABLED"
 
   dynamic "additional_configuration" {
-    for_each = { for k, v in each.value.additional_configuration : k => v if v.enabled }
+    for_each = { for k, v in lookup(each.value, "additional_configuration", {}) : k => v if v.enabled }
     content {
       name   = each.key
       status = each.value.enabled ? "ENABLED" : "DISABLED"
