@@ -1,3 +1,10 @@
+## [1.7.6](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.7.5...v1.7.6) (2024-12-11)
+
+
+### Bug Fixes
+
+* object does not have an attribute ([49c2179](https://github.com/nstrlabs/tf-aws-guardduty/commit/49c21790abfd35086497525cb1e4ce834fd2c454))
+
 ## [1.7.5](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.7.4...v1.7.5) (2024-11-29)
 
 
