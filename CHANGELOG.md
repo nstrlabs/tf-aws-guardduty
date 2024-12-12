@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.7.6...v1.8.0) (2024-12-12)
+
+
+### Features
+
+* notification module ([797f74f](https://github.com/nstrlabs/tf-aws-guardduty/commit/797f74fc403a6fce3b2a4187592d445d98963dff))
+
 ## [1.7.6](https://github.com/nstrlabs/tf-aws-guardduty/compare/v1.7.5...v1.7.6) (2024-12-11)
 
 
