@@ -10,15 +10,15 @@ Check https://nwdlabs.atlassian.net/wiki/spaces/INF/pages/539787266/Create+terra
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | >= 1.0.0 |
-| <a name="requirement_aws"></a> [aws](#requirement_aws) | ~> 5.0 |
+| <a name="requirement_aws"></a> [aws](#requirement_aws) | >= 5.0 |
 | <a name="requirement_random"></a> [random](#requirement_random) | >= 3.4 |
 
 #### Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider_aws) | ~> 5.0 |
-| <a name="provider_aws.replica"></a> [aws.replica](#provider_aws.replica) | ~> 5.0 |
+| <a name="provider_aws"></a> [aws](#provider_aws) | >= 5.0 |
+| <a name="provider_aws.replica"></a> [aws.replica](#provider_aws.replica) | >= 5.0 |
 | <a name="provider_random"></a> [random](#provider_random) | >= 3.4 |
 
 #### Modules
@@ -33,10 +33,6 @@ Check https://nwdlabs.atlassian.net/wiki/spaces/INF/pages/539787266/Create+terra
 
 | Name | Type |
 |------|------|
-| [aws_cloudwatch_event_rule.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_rule) | resource |
-| [aws_cloudwatch_event_target.email](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_target) | resource |
-| [aws_cloudwatch_event_target.pagerduty](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_target) | resource |
-| [aws_cloudwatch_event_target.slack](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_target) | resource |
 | [aws_guardduty_detector.primary](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/guardduty_detector) | resource |
 | [aws_guardduty_detector_feature.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/guardduty_detector_feature) | resource |
 | [aws_guardduty_filter.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/guardduty_filter) | resource |
@@ -50,7 +46,6 @@ Check https://nwdlabs.atlassian.net/wiki/spaces/INF/pages/539787266/Create+terra
 | [aws_kms_key.replica_key](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_key) | resource |
 | [aws_s3_object.ipset_object](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object) | resource |
 | [aws_s3_object.threatintelset_object](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object) | resource |
-| [aws_sns_topic_subscription.email](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic_subscription) | resource |
 | [random_string.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
 | [aws_iam_policy_document.bucket_replication](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
@@ -64,7 +59,6 @@ Check https://nwdlabs.atlassian.net/wiki/spaces/INF/pages/539787266/Create+terra
 
 | Name | Description | Type |
 |------|-------------|------|
-| <a name="input_email_notifications"></a> [email_notifications](#input_email_notifications) | Enable Email notifications for GuardDuty findings | `bool` |
 | <a name="input_enable_ec2_agent_management"></a> [enable_ec2_agent_management](#input_enable_ec2_agent_management) | Configure and enable EC2 Agent Management additional configuration of Runtime Monitoring. Defaults to `false`. | `bool` |
 | <a name="input_enable_ecs_fargate_agent_management"></a> [enable_ecs_fargate_agent_management](#input_enable_ecs_fargate_agent_management) | Configure and enable ECS Fargate Agent Management additional configuration of Runtime Monitoring. Defaults to `false`. | `bool` |
 | <a name="input_enable_eks_addon_management"></a> [enable_eks_addon_management](#input_enable_eks_addon_management) | Configure and enable EKS Addon Mangement  additional configuration of EKS Runtime Monitoring/Runtime Monitoring. Defaults to `false`. | `bool` |
@@ -81,15 +75,9 @@ Check https://nwdlabs.atlassian.net/wiki/spaces/INF/pages/539787266/Create+terra
 | <a name="input_guardduty_bucket_acl"></a> [guardduty_bucket_acl](#input_guardduty_bucket_acl) | Canned ACL to apply to the bucket. Valid values are `private` \| `public-read` \| `public-read-write` \| `aws-exec-read` \| `authenticated-read` \| `bucket-owner-read` \| `bucket-owner-full-control`. Defaults to `null`. | `string` |
 | <a name="input_guardduty_s3_bucket"></a> [guardduty_s3_bucket](#input_guardduty_s3_bucket) | Name of the S3 Bucket for GuardDuty. Defaults to `null`. | `string` |
 | <a name="input_ipset_config"></a> [ipset_config](#input_ipset_config) | Specifies AWS GuardDuty IPSet configuration.<br/>  `activate` - Specifies whether GuardDuty is to start using the uploaded IPSet.<br/>  `name` - The friendly name to identify the IPSet.<br/>  `format` - The format of the file that contains the IPSet. Valid values: `TXT` \| `STIX` \| `OTX_CSV` \| `ALIEN_VAULT` \| `PROOF_POINT` \| `FIRE_EYE`.<br/>  `content`- Literal string value to use as the object content, which will be uploaded as UTF-8-encoded text. Example: `10.0.0.0/8\n`.<br/>  `key` - Name of the object once it is in the bucket. | <pre>list(object({<br/>    activate = bool<br/>    name     = string<br/>    format   = string<br/>    content  = string<br/>    key      = string<br/>  }))</pre> |
-| <a name="input_pagerduty_notifications"></a> [pagerduty_notifications](#input_pagerduty_notifications) | Enable PagerDuty notifications for GuardDuty findings | `bool` |
 | <a name="input_publish_to_s3"></a> [publish_to_s3](#input_publish_to_s3) | Specifies if the Amazon GuardDuty findings should be exported to S3. Defaults to `false`. | `bool` |
 | <a name="input_publishing_config"></a> [publishing_config](#input_publishing_config) | Defines the findings publishing configuration. | <pre>list(object({<br/>    destination_arn  = string<br/>    kms_key_arn      = string<br/>    destination_type = optional(string)<br/>  }))</pre> |
 | <a name="input_replica_region"></a> [replica_region](#input_replica_region) | Region where S3 bucket data from Amazon GuardDuty will be replicated. Defaults to `null`. | `string` |
-| <a name="input_slack_notifications"></a> [slack_notifications](#input_slack_notifications) | Enable Slack notifications for GuardDuty findings | `bool` |
-| <a name="input_sns_topic_email_arn"></a> [sns_topic_email_arn](#input_sns_topic_email_arn) | Email SNS Topic ARN | `string` |
-| <a name="input_sns_topic_email_endpoint"></a> [sns_topic_email_endpoint](#input_sns_topic_email_endpoint) | Email SNS Topic endpoint | `string` |
-| <a name="input_sns_topic_pagerduty_arn"></a> [sns_topic_pagerduty_arn](#input_sns_topic_pagerduty_arn) | PagerDuty SNS Topic ARN | `string` |
-| <a name="input_sns_topic_slack_arn"></a> [sns_topic_slack_arn](#input_sns_topic_slack_arn) | Slack SNS Topic ARN | `string` |
 | <a name="input_tags"></a> [tags](#input_tags) | Key-value map of resource tags. If configured with a provider default_tags configuration block present, tags with matching keys will overwrite those defined at the provider-level. Defaults to `{}`. | `map(any)` |
 | <a name="input_threatintelset_config"></a> [threatintelset_config](#input_threatintelset_config) | Specifies AWS GuardDuty ThreatIntelSet configuration.<br/>  `activate` - Specifies whether GuardDuty is to start using the uploaded ThreatIntelSet.<br/>  `name` - The friendly name to identify the ThreatIntelSet.<br/>  `format` - The format of the file that contains the ThreatIntelSet. Valid values: `TXT` \| `STIX` \| `OTX_CSV` \| `ALIEN_VAULT` \| `PROOF_POINT` \| `FIRE_EYE`.<br/>  `content`- Literal string value to use as the object content, which will be uploaded as UTF-8-encoded text. Example: `10.0.0.0/8\n`.<br/>  `key` - Name of the object once it is in the bucket.<br/>  `object_acl`- Canned ACL to apply to the object. Valid values are `private` \| `public-read` \| `public-read-write` \| `aws-exec-read` \| `authenticated-read` \| `bucket-owner-read` \| `bucket-owner-full-control`. | <pre>list(object({<br/>    activate   = bool<br/>    name       = string<br/>    format     = string<br/>    content    = string<br/>    key        = string<br/>    object_acl = string<br/>  }))</pre> |
 
